@@ -10,7 +10,7 @@ public class ConsultaCep {
 
     public Endereco buscaEndereco(String cep){
 
-        URI endereco = URI.create("http://viacep.com.br/ws"+ cep +"/json");
+        URI endereco = URI.create("https://viacep.com.br/ws/"+ cep +"/json");
 
         HttpRequest request = HttpRequest.newBuilder().uri(endereco).build();
 
