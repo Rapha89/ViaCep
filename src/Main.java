@@ -13,7 +13,9 @@ public class Main {
         try{
             Endereco novoEndereco = consultaCep.buscaEndereco(cep);
             System.out.println(novoEndereco);
-        }catch(RuntimeException e){
+            GeradorDeArquivo gerador = new GeradorDeArquivo();
+            gerador.salvarJson(novoEndereco);
+        }catch(RuntimeException | IOException e){
             System.out.println(e.getMessage());
             System.out.println("Finalizando a aplicação!");
 
